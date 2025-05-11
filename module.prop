@@ -1,0 +1,7 @@
+id=RootCertificateInstaller
+name=系统根证书安装模块
+version=1.0.0
+versionCode=1
+author=u9521
+description=安装自定义的CA根证书到系统，支持Android 14和任意X509格式的证书
+updateJson=
