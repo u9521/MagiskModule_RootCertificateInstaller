@@ -32,7 +32,9 @@ openssl genrsa -out ca1.key 4096
 openssl req -x509 -new -key ca1.key -days 3650 -out ca1.crt -subj "/C=XX/ST=State/L=City/O=Test Organization/OU=Test Unit/CN=Test common Name"
 ```
 4. 有了证书和私钥就可以配置抓包软件愉快抓包了
-下面是计算当天到`9999-12-31`有多少天的Python脚本，算好后可以直接填到OpenSSL
+
+下面是计算当天到`9999-12-31`有多少天的Python脚本，想要超长证书的可以算好后可以直接填到OpenSSL
+
 ```
 from datetime import datetime
 
@@ -44,7 +46,7 @@ print(f"从 {start_date.strftime('%Y-%m-%d')} 到 {end_date.strftime('%Y-%m-%d')
 ```
 > 不要使用testcase里面的CA证书，因为没有实际作用，我也没有私钥(除非你能算出来RSA4096)，仅用来测试模块用的
 # 感谢名单
-- (OpenSSL)[https://github.com/openssl/openssl]
-- (AdguardTeam/adguardcert)[https://github.com/AdguardTeam/adguardcert/blob/master/module/post-fs-data.sh] Android 14 证书注入方案
-- 酷安@fsxitutu2 感谢他的证书安装模块和预编译的OpenSSL，思路大多来自他的模块，(原帖子地址)[https://www.coolapk.com/feed/53987025]
-- (LIghtJUNction/RootManage-Module-Model)[https://github.com/LIghtJUNction/RootManage-Module-Model]Magisk模块模板
+- [OpenSSL](https://github.com/openssl/openssl)
+- [AdguardTeam/adguardcert](https://github.com/AdguardTeam/adguardcert/blob/master/module/post-fs-data.sh) Android 14 证书注入方案
+- 酷安@fsxitutu2 感谢他的证书安装模块和预编译的OpenSSL，思路大多来自他的模块。 [原帖地址](https://www.coolapk.com/feed/53987025)
+- [LIghtJUNction/RootManage-Module-Model](https://github.com/LIghtJUNction/RootManage-Module-Model) Magisk模块模板
